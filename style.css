@@ -1,65 +1,99 @@
-.game-container {
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.card {
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-    max-width: 300px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: white;
     margin: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.column h2 {
     text-align: center;
-    transition: box-shadow 0.3s;
+    color: #333;
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.matching-item {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
 }
 
-.easy-mode {
-    background-color: #d4edda;
+.matching-item:hover {
+    background-color: #e4e4e4;
 }
 
-.medium-mode {
-    background-color: #ffeeba;
+.button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
 }
 
-.hard-mode {
-    background-color: #f8d7da;
+.button:hover {
+    background-color: #4cae4c;
 }
 
-@media (max-width: 600px) {
-    .game-container {
-        padding: 10px;
+.nav {
+    margin: 20px 0;
+}
+
+.nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #5cb85c;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
 
-    .card {
+    .column {
         width: 100%;
-        padding: 10px;
+        margin: 10px 0;
     }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-    .card {
-        width: 80%;
-    }
+/* SVG connection lines (example) */
+.svg-lines {
+    position: relative;
 }
 
-@media (min-width: 901px) {
-    .card {
-        width: 40%;
-    }
+.svg-lines svg {
+    position: absolute;
+    pointer-events: none;
 }
